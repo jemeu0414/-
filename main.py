@@ -22,10 +22,10 @@ nowdate = datetime.datetime.strptime(nowdate, '%Y-%m-%d %H:%M:%S') #문자열 �
 nowdate = nowdate + datetime.timedelta(hours=9) #그리니치 표준시로 되어있는 날짜를 9시간 더하여 한국 표준시로 바꾸어줍니다.
 
 howlong = expried - nowdate #만료날짜와 현재날짜를 뺀값을 저장합니다.
-days = howlong.days #만료날짜의 일을 구합니다
-hours = howlong.seconds // 3600 #만료날짜의 시를 구합니다
-minutes = howlong.seconds // 60 - hours * 60 #만료날짜의 분을 구합니다.
-seconds = howlong.seconds - hours * 3600 -minutes * 60 #만료날짜의 초를 구합니다.
+days = howlong.days #만료날짜의 남은 일을 구합니다
+hours = howlong.seconds // 3600 #만료날짜의 남은 시를 구합니다
+minutes = howlong.seconds // 60 - hours * 60 #만료날짜의 남은 분을 구합니다.
+seconds = howlong.seconds - hours * 3600 -minutes * 60 #만료날짜의  초를 구합니다.
 
 if noexpired < expried: #만료날짜가 5555년보다 크면 무제한으로 출력합니다.
     print("무제한입니다.")
